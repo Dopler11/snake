@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Snake
   - Food
+  - Grid
   layers:
   - Default
   - TransparentFX

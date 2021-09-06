@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: f41d630f6b86ef743be33614934952f2
+guid: 7d26e60e17641514ea9f8012d7c049d9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - foodPrefab: {fileID: 2652470636389773377, guid: b64a595e53824824eb057e472163ecbc, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
