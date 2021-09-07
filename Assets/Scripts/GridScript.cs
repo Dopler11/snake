@@ -4,46 +4,53 @@ using UnityEngine;
 
 public class GridScript : MonoBehaviour
 {
-    public GameObject snakePrefab;
-    public GameObject foodPrefab;
     public Color gridColor;
     public float gridSize = 1f;
     public int fieldColumns = 20;
     public int fieldRows = 11;
     public float objectSizeFactor = 0.7f;
-    public float speed = 0.5f;
+    public float speed = 2f;
+
+    public GameObject snakePrefab;
+    public GameObject foodPrefab;
 
     private void Start()
     {
-        createSnake();
-        createFood();
+        CreateSnake();
+        CreateFood();
     }
 
-    public void createSnake()
+    public void CreateSnake()
     {
-        GameObject snake = Instantiate(snakePrefab, getPositionByCoordinates(getRandomCoordinates()), Quaternion.identity);
+        GameObject snake = Instantiate(snakePrefab);
         snake.name = "Snake";
     }
 
-    public void createFood()
+    public void CreateFood()
     {
-        GameObject food = Instantiate(foodPrefab, getPositionByCoordinates(getRandomCoordinates()), Quaternion.identity);
+        GameObject food = Instantiate(foodPrefab, GetPositionByCoordinates(GetRandomCoordinates()), Quaternion.identity);
         food.name = "Food";
     }
 
-    public Vector2Int getRandomCoordinates()
+    public Vector2Int GetRandomCoordinates()
     {
-        int column = Random.Range(0, fieldColumns);
-        int row = Random.Range(0, fieldRows);
-        return new Vector2Int(column, row);
+        return new Vector2Int(Random.Range(0, fieldColumns), Random.Range(0, fieldRows));
     }
 
-    public Vector3 getPositionByCoordinates(Vector2Int coordinates)
+    public Vector3 GetPositionByCoordinates(Vector2Int coordinates)
     {
         return new Vector3(coordinates.x * gridSize + gridSize / 2, coordinates.y * gridSize + gridSize / 2);
     }
 
-    public bool isCoordinatesOutside(Vector2Int coordinates)
+    public Vector2Int GetCoordinatesByPosition(Vector3 position)
+    {
+        return new Vector2Int(
+            Mathf.RoundToInt((position.x - gridSize / 2) / gridSize),
+            Mathf.RoundToInt((position.y - gridSize / 2) / gridSize)
+        );
+    }
+
+    public bool IsCoordinatesOutside(Vector2Int coordinates)
     {
         return coordinates.x < 0 || coordinates.x > fieldColumns - 1 || coordinates.y < 0 || coordinates.y > fieldRows - 1;
     }

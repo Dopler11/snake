@@ -301,14 +301,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0e23807ec1126469d1d3d36e2a711f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snakePrefab: {fileID: 1195788309808492260, guid: 659eb5b28b0a7bf43ac983e85fc36f47, type: 3}
-  foodPrefab: {fileID: 2652470636389773377, guid: b64a595e53824824eb057e472163ecbc, type: 3}
   gridColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
-  gridSize: 1
-  fieldColumns: 20
-  fieldRows: 11
+  gridSize: 0.5
+  fieldColumns: 40
+  fieldRows: 22
   objectSizeFactor: 0.7
-  speed: 0.5
+  speed: 5
+  snakePrefab: {fileID: 6626164241732452216, guid: 4d0ce58aaff8f164090ebaae6d13e62b, type: 3}
+  foodPrefab: {fileID: 2652470636389773377, guid: b64a595e53824824eb057e472163ecbc, type: 3}
 --- !u!4 &1210154457
 Transform:
   m_ObjectHideFlags: 0
