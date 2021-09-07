@@ -7,6 +7,7 @@ TagManager:
   - Snake
   - Food
   - Grid
+  - SnakeBlock
   layers:
   - Default
   - TransparentFX
@@ -46,4 +47,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Objects
+    uniqueID: 4047422083
     locked: 0

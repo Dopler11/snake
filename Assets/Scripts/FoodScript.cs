@@ -8,13 +8,12 @@ public class FoodScript : MonoBehaviour
     public GameObject foodPrefab;
 
     private Vector2Int coordinates;
-    public Vector2Int Coordinates { get; set; }
 
     private void Start()
     {
         grid = GameObject.FindWithTag("Grid").GetComponent<GridScript>();
 
-        coordinates = grid.getRandomCoordinates();
+        coordinates = grid.GetRandomCoordinates();
 
         calcScaleAndPosition();
     }
@@ -27,12 +26,12 @@ public class FoodScript : MonoBehaviour
     private void calcScaleAndPosition()
     {
         gameObject.transform.localScale = new Vector3(grid.gridSize * grid.objectSizeFactor, grid.gridSize * grid.objectSizeFactor);
-        gameObject.transform.position = grid.getPositionByCoordinates(coordinates);
+        gameObject.transform.position = grid.GetPositionByCoordinates(coordinates);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         Destroy(gameObject);
-        grid.createFood();
+        grid.CreateFood();
     }
 }
